@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+.App {
+  text-align: center;
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  color: #fff;
+  font-size: 48px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: grey;
+}
+.cards_view,
+.list_view {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px;
+  justify-content: space-between;
+}
+.shop_card {
+  background-color: #fff;
+  border-radius: 30px;
+  width: 30%;
+  margin-bottom: 20px;
+}
+.shop_item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+.card_image {
+  width: 100%;
+}
+.item_image {
+  height: 150px;
+}
+
+.card_price_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 32px;
+}
+
+.button {
+  width: 100px;
+  height: 50px;
+  border-radius: 25px;
+  border-color: red;
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #fff;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
