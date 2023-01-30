@@ -37,7 +37,9 @@ function List() {
       {list ? (
         <div className="list">
           {list.map((item) => {
-            return <Item handleClick={handleClick} person={item} />;
+            return (
+              <Item key={item.id} handleClick={handleClick} person={item} />
+            );
           })}
         </div>
       ) : null}
