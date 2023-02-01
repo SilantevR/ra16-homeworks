@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Link, Routes, Route } from "react-router-dom";
+import { AddPost } from "./Components/AddPost";
+import { Posts } from "./Components/Posts";
+import { SelectedPost } from "./Components/SelectedPost";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav className="nav">
+        <div className="head-title">
+          <Link to="/posts/new">
+            <button className="btn-add">Создать пост</button>
+          </Link>
+        </div>
+      </nav>
+
+      <div className="page">
+        <Routes>
+          <Route path="/posts" element={<Posts />} />
+          <Route
+            path="/posts/new"
+            element={<AddPost title={"Создать пост"} />}
+          />
+          <Route
+            path="/posts/:id"
+            element={<SelectedPost title={"Просматриваемый пост"} />}
+          />
+          <Route path="*" element={<Posts />} />
+        </Routes>
+      </div>
     </div>
   );
 }
