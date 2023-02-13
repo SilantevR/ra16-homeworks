@@ -1,15 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './App.css';
-import Calendar from './Calendar';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./App.css";
 
-const date = new Date()
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Calendar date={date}/>
+    <App />
   </React.StrictMode>
 );
-
-
