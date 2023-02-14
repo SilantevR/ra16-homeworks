@@ -42,8 +42,16 @@ export default function Converter() {
           value={form.hex}
           onChange={convertHexToRgb}
         />
-        <div id="result" style={{ backgroundColor: `${form.bg}` }}>
-          {form.rgb}
+        <div id="result">
+          <span
+            id="text-result"
+            style={
+              form.hex === "#000000" ? { color: "#fff" } : { color: "#000" }
+            }
+          >
+            {form.rgb}
+          </span>
+          <div id="bg-result" style={{ backgroundColor: `${form.bg}` }}></div>
         </div>
       </label>
       <div className="bg" style={{ backgroundColor: `${form.bg}` }}></div>

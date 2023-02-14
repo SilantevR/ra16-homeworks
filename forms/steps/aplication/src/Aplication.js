@@ -23,10 +23,23 @@ export default function Aplication() {
     walk.km = form.km;
     let walks;
     let newId;
+
     if (!form.isEdite) {
       walk.id = form.id;
       walks = form.listOfWalks;
-      newId = form.id + 1;
+      let existedWalk = walks.filter((item) => {
+        return item.date === walk.date;
+      });
+      if (existedWalk.length) {
+        walks = form.listOfWalks.filter((item) => {
+          return item.date !== walk.date;
+        });
+        walk.id = Number(existedWalk[0].id);
+        walk.km = Number(walk.km) + Number(existedWalk[0].km);
+        newId = form.id;
+      } else {
+        newId = form.id + 1;
+      }
     } else {
       walk.id = form.editeId;
       walks = form.listOfWalks.filter((item) => {
@@ -34,6 +47,7 @@ export default function Aplication() {
       });
       newId = form.id;
     }
+
     walks.push(walk);
     walks.sort((a, b) => {
       let aEuroDate = a.date.split(".");
@@ -84,12 +98,19 @@ export default function Aplication() {
         <lable htmlFor="date">Дата</lable>
         <input
           id="date"
+          type="date"
           name="date"
           value={form.date}
           onChange={handleNameChange}
         />
         <lable htmlFor="km">км</lable>
-        <input id="km" name="km" value={form.km} onChange={handleNameChange} />
+        <input
+          id="km"
+          type="number"
+          name="km"
+          value={form.km}
+          onChange={handleNameChange}
+        />
         <button type="submit">OK</button>
       </form>
       <div className="list">
